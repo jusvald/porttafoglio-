@@ -1,0 +1,15 @@
+html
+  head
+    title #{song.title}
+    link(rel="stylesheet", type="text/css", href="/css/style.css") 
+  body
+    h1 #{song.title} - #{song.author}
+    img(src=song.thumbnail, alt=song.title)
+    p Lyrics:
+    p #{song.lyrics}
+
+        nav
+      ul
+        each songItem in songs
+          li
+            a(href=`/song/${songItem.song_id}`) #{songItem.title} - #{songItem.author}
